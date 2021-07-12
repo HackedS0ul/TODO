@@ -6,8 +6,12 @@
     {% csrf_token %}
     <div class="inputField">
       <input type="text" name="content" placeholder="Add your new todo">
-      <input type="submit" value="Add Your Item" ><i class="fas fa-plus"></i>
+      <input type="submit" value="+">
     </div>
+</form>
+<form action="/deleteTodoItem/{{i.id}}/" method="post">
+{% csrf_token %}
+<input type="submit" value="delete">
 </form>
 <header>Todo App</header>
     

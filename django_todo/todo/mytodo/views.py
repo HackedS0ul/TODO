@@ -15,3 +15,8 @@ def addTodoView(request):
     new_item.save()
     return HttpResponseRedirect('/todo/')
 
+def deleteTodoView(request, i):
+    deleteItem = TodoListItem.objects.get(id=i)
+    deleteItem.delete()
+    return HttpResponseRedirect('/todo/')
+
