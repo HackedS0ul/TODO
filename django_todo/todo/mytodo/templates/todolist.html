@@ -1,16 +1,27 @@
-
+{% extends 'base.html' %}
 
 {% block content %}
-
-<h1>TODO LIST</h1>
-<ul>
+<div class="wrapper">
 <form action='/addTodoItem/' method="post">
     {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="Add Todo Item">
 </form>
-{% for i in all_items %}
+<header>Todo App</header>
+    <div class="inputField">
+      <input type="text" name="content" placeholder="Add your new todo">
+      <button type="submit" value="Add Todo Item"><i class="fas fa-plus"></i></button>
+    </div>
+    <ul class="todoList">
+       {% for i in all_items %}
 
-<li>{{ i.content }}</li>
-{% endfor %}
+        <li>{{ i.content }}</li>
+ 
+    {% endfor %}
+    </ul>
+    
+    
+    <div class="footer">
+      <span>You have <span class="pendingTasks"></span> pending tasks</span>
+      <button>Clear All</button>
+    </div>
+  </div>
 {% endblock %}
