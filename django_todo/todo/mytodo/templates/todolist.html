@@ -9,7 +9,7 @@
       <input type="submit" value="+">
     </div>
 </form>
-<form action="/deleteTodoItem/{{i.id}}/" method="post">
+<form action="/deleteTodoItem/{{i.id}}" method="post">
 {% csrf_token %}
 <input type="submit" value="delete">
 </form>
@@ -18,7 +18,7 @@
     <ul class="todoList">
        {% for i in all_items %}
 
-        <li>{{ i.content }}</li>
+        <li>{{ i.content }}<button type="submit" class="btn btn-danger" value="{{i.id}}">X</button></li>
  
     {% endfor %}
     </ul>
