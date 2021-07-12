@@ -1,0 +1,16 @@
+
+
+{% block content %}
+
+<h1>TODO LIST</h1>
+<ul>
+<form action='/addTodoItem/' method="post">
+    {% csrf_token %}
+    <input type="text" name="content">
+    <input type="submit" value="Add Todo Item">
+</form>
+{% for i in all_items %}
+
+<li>{{ i.content }}</li>
+{% endfor %}
+{% endblock %}
