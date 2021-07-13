@@ -16,6 +16,11 @@ body{
   padding: 10px;
   background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
 }
+input.btn.btn-danger.delete {
+  position: relative !important;
+  bottom: 50px !important;
+  left: 88% !important; 
+}
 .wrapper{
   background: #fff;
   max-width: 400px;
