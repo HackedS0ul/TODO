@@ -7,7 +7,7 @@ from .models import TodoListItem
 
 def todoView(request):
     all_todo_items = TodoListItem.objects.all()
-    pending_item = TodoListItem.objects.all().count()
+    pending_item = TodoListItem.objects.count()
     context = {
         'all_items': all_todo_items,
         'pending_items': pending_item,
