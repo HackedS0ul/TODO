@@ -22,9 +22,11 @@
     {% endfor %}
     </ul>
     
-    
+   
     <div class="footer">
-      <span>You have <span class="pendingTasks"></span> pending tasks</span>
+     {% for pending in pendings_items %}
+      <span>You have {{ pending.id }}<span class="pendingTasks"></span> pending tasks</span>
+    {% endfor %}
       <button>Clear All</button>
     </div>
   </div>

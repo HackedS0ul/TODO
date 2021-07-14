@@ -7,7 +7,12 @@ from .models import TodoListItem
 
 def todoView(request):
     all_todo_items = TodoListItem.objects.all()
-    return render(request, 'todolist.html', {'all_items': all_todo_items})
+    pending_item = TodoListItem.objects.all().count()
+    context = {
+        'all_items': all_todo_items,
+        'pending_items': pending_item,
+    }
+    return render(request, 'todolist.html', context)
 
 def addTodoView(request):
     b = request.POST['content']
