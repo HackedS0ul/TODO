@@ -5,9 +5,17 @@
 <header>Todo App</header>
 <form action='/addTodoItem/' method="post">
     {% csrf_token %}
+   
     <div class="inputField">
+     {% if empty %}
+
+       <input type="text" name="content" placeholder="Add your new todo" class="disabled">
+      <input type="submit" value="+" class="btn btn-success add disabled">
+      {% else %}
       <input type="text" name="content" placeholder="Add your new todo">
-      <input type="submit" value="+" class="btn btn-success add">
+        <input type="submit" value="+" class="btn btn-success add ">
+      {% endif %}
+      
     </div>
 </form>
     
