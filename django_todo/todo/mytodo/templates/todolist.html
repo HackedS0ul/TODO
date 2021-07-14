@@ -2,15 +2,14 @@
 
 {% block content %}
 <div class="wrapper">
+<header>Todo App</header>
 <form action='/addTodoItem/' method="post">
     {% csrf_token %}
     <div class="inputField">
       <input type="text" name="content" placeholder="Add your new todo">
-      <input type="submit" value="+">
+      <input type="submit" value="+" class="btn btn-success add">
     </div>
 </form>
-
-<header>Todo App</header>
     
     <ul class="todoList">
        {% for i in all_items %}
