@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>TemplateView</h1>
+
+<legend>List View</legend>
+{% for todolist in object_list %}
+
+   <h1>{{todolist}}</h1> 
+{% endfor %}
+{% endblock %} 
